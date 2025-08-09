@@ -6,6 +6,10 @@ Welcome to my **30 Dashboards in 30 Days** challenge! This repository contains 3
 
 The goal is simple: build one dashboard every day for 30 days, each solving a real problem or providing valuable insights using live data. Every dashboard is fully functional, responsive, and deployed as a separate Netlify site.
 
+<a href="https://30-dashboards-30-days.netlify.app/" target="_blank">
+  <img src="https://img.shields.io/badge/LIVE_DEMO-Click_Here-blue?style=for-the-badge&logo=github" />
+</a>
+
 ## 📊 Dashboard Collection
 
 | Day | Dashboard               | Description                                           | Live Demo                                                           | Status         |
