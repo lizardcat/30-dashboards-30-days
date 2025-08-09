@@ -3,7 +3,7 @@ import { Github, Star, GitFork, Eye, Calendar, TrendingUp, Code, Users } from 'l
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts'
 
 export function Dashboard01() {
-  const [username, setUsername] = useState('octocat') // Default GitHub user
+  const [username, setUsername] = useState('google') // Default GitHub user
   const [userData, setUserData] = useState(null)
   const [repos, setRepos] = useState([])
   const [events, setEvents] = useState([])
