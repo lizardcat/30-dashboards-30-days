@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import {
-  Github, Star, GitFork, Eye, Calendar, TrendingUp, Code, Users,
-  ExternalLink, Clock, GitCommit, BookOpen, Activity, Filter, Search,
+  Github, Star, GitFork, Eye, Calendar, TrendingUp, Code,
+  ExternalLink, Clock, GitCommit, BookOpen, Activity, Search,
   Zap, Globe, MapPin, Mail, Building
 } from 'lucide-react'
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell, LineChart, Line, AreaChart, Area
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+  PieChart, Pie, Cell, AreaChart, Area
 } from 'recharts'
 
 export function Dashboard01() {
@@ -72,7 +72,7 @@ export function Dashboard01() {
     }
   }
 
-  // Enhanced data processing
+  // data processing
   const getLanguageData = () => {
     const languages = {}
     const filteredRepos = getFilteredRepos()
@@ -196,7 +196,7 @@ export function Dashboard01() {
   return (
     <div className="min-h-screen bg-slate-900 text-white p-6">
       <div className="max-w-7xl mx-auto space-y-6">
-        {/* Enhanced Header */}
+        {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold flex items-center gap-3 mb-2">
@@ -234,7 +234,7 @@ export function Dashboard01() {
 
         {userData && (
           <>
-            {/* Enhanced User Profile */}
+            {/* User Profile */}
             <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
               <div className="flex flex-col lg:flex-row items-start gap-6">
                 <img
@@ -337,7 +337,7 @@ export function Dashboard01() {
               })}
             </div>
 
-            {/* Enhanced Stats Overview */}
+            {/* Stats Overview */}
             {activeTab === 'overview' && (
               <div className="space-y-6">
                 <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
@@ -362,7 +362,7 @@ export function Dashboard01() {
 
                 {/* Charts Row */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  {/* Enhanced Language Distribution */}
+                  {/* Language Distribution */}
                   <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
                     <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                       <Code className="h-5 w-5 text-blue-400" />
@@ -486,7 +486,7 @@ export function Dashboard01() {
               </div>
             )}
 
-            {/* Enhanced Repositories Tab */}
+            {/* Repositories Tab */}
             {activeTab === 'repositories' && (
               <div className="space-y-6">
                 {/* Repository Filters */}
