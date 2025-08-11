@@ -15,7 +15,7 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | Day | Dashboard               | Description                                           | Live Demo                                                           | Status         |
 | --- | ----------------------- | ----------------------------------------------------- | ------------------------------------------------------------------- | -------------- |
 | 01  | GitHub Activity Tracker | Personal GitHub contribution and repository analytics | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-01) | ✅ Complete    |
-| 02  | Weather Multi-City      | Real-time weather data for multiple locations         | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-02) | 🚧 In Progress |
+| 02  | Weather Multi-City      | Real-time weather data for multiple locations         | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-02) | ✅ Complete    |
 | 03  | Crypto Portfolio        | Cryptocurrency tracking and portfolio analysis        | [View Demo](#)                                                      | 🚧 In Progress |
 | 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](#)                                                      | ⏳ Planned     |
 | 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](#)                                                      | ⏳ Planned     |
@@ -73,7 +73,7 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 - **Focus:** A simple weather tracker that uses the OpenWeather API to pull real-time data for various cities in Africa.
 - **Key Features:** Weather data + temperature in C & F, search functionality for any city in the world
 - **Challenges:** Setting up OpenWeather API and securely using it with Netlify
-- **Learnings:** It's easy to use dummy data, but how easy is it to use the API?
+- **Learnings:** It's actually pretty easy to integrate the OpenWeather API.
 
 _[Daily entries will be added as each dashboard is completed]_
 
