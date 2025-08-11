@@ -65,15 +65,15 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 
 - **Focus:** Personal GitHub analytics and contribution visualization
 - **Key Features:** Commit history, repository stats, language breakdown
-- **Challenges:** GitHub API rate limiting, data visualization
-- **Learnings:** Creating a working heatmap for contributions that's similar to GitHub's is proving to be difficult.
+- **Challenges:** GitHub API rate limiting (it's supposed to be 60 requests an hour, but I seem to get limited way faster), data visualization (It seems GitHub doesn't allow scraping data older than 30 days?)
+- **Learnings:** Creating a working heatmap for contributions that's similar to GitHub's is proving to be difficult. I gave up.
 
 ### Day 2 - Multi-City Weather Tracker
 
 - **Focus:** A simple weather tracker that uses the OpenWeather API to pull real-time data for various cities in Africa.
 - **Key Features:** Weather data + temperature in C & F, search functionality for any city in the world
 - **Challenges:** Setting up OpenWeather API and securely using it with Netlify
-- **Learnings:** It's actually pretty easy to integrate the OpenWeather API.
+- **Learnings:** It's actually pretty easy to integrate the OpenWeather API. Like Streamlit, Netlify lets you easily add secret variables like API keys.
 
 _[Daily entries will be added as each dashboard is completed]_
 
