@@ -79,7 +79,6 @@ _[Daily entries will be added as each dashboard is completed]_
 
 ## 🔗 Connect
 
-- **Portfolio:** [alexraza.tech](https://www.alexraza.tech)
 - **LinkedIn:** [linkedin.com/in/aa-raza](https://www.linkedin.com/in/aa-raza)
 - **Bluesky:** [bsky.app/profile/alexraza.tech](https://bsky.app/profile/alexraza.tech)
 
