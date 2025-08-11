@@ -13,7 +13,7 @@ export function Home() {
         },
         {
         id: '02',
-        title: 'African Cities Weather Tracker',
+        title: 'Global Cities Weather Tracker',
         description: 'Real-time weather data for multiple locations in Africa',
         status: 'completed',
         path: '/dashboard-02',
