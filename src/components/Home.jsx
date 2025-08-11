@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Calendar, Target, TrendingUp, Github } from 'lucide-react'
+import { Calendar, Target, TrendingUp, Github, CloudSun } from 'lucide-react'
 
 export function Home() {
     const dashboards = [
@@ -13,12 +13,13 @@ export function Home() {
         },
         {
         id: '02',
-        title: 'Weather Multi-City',
-        description: 'Real-time weather data for multiple locations',
-        status: 'planned',
+        title: 'African Cities Weather Tracker',
+        description: 'Real-time weather data for multiple locations in Africa',
+        status: 'completed',
         path: '/dashboard-02',
+        icon: CloudSun,
         },
-        // ... more dashboards will be added here
+        // add more dashboards here
     ]
     
     const getStatusBadge = (status) => {
@@ -40,22 +41,22 @@ export function Home() {
             30 Dashboards in 30 Days Challenge
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Building functional, data-driven dashboards with real APIs and modern web technologies. 
+            Building functional, data-driven dashboards with real APIs and React. 
             One dashboard per day for 30 days.
             </p>
             
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">1</div>
+                <div className="dashboard-stat">2</div>
                 <div className="dashboard-label mt-1">Completed</div>
             </div>
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">29</div>
+                <div className="dashboard-stat">28</div>
                 <div className="dashboard-label mt-1">Remaining</div>
             </div>
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">1</div>
+                <div className="dashboard-stat">2</div>
                 <div className="dashboard-label mt-1">Day Streak</div>
             </div>
             </div>
@@ -114,7 +115,7 @@ export function Home() {
                 <div>
                 <h3 className="font-semibold text-white mb-1">Goal</h3>
                 <p className="text-gray-400 text-sm">
-                    Build 30 functional dashboards using real data sources and modern web technologies.
+                    The goal is to build 30 functional dashboards using real data sources and modern web technologies.
                 </p>
                 </div>
             </div>
@@ -124,7 +125,7 @@ export function Home() {
                 <div>
                 <h3 className="font-semibold text-white mb-1">Timeline</h3>
                 <p className="text-gray-400 text-sm">
-                    One dashboard per day for 30 consecutive days, documenting the entire process.
+                    I'm aiming for one dashboard per day for 30 consecutive days, documenting the entire process.
                 </p>
                 </div>
             </div>
@@ -134,7 +135,7 @@ export function Home() {
                 <div>
                 <h3 className="font-semibold text-white mb-1">Learning</h3>
                 <p className="text-gray-400 text-sm">
-                    Master React, data visualization, API integration, and deployment practices.
+                    This is purely so I can master React, API integration, and deployment practices. You can find the repo for this <a href="https://github.com/lizardcat/30-dashboards-30-days">on my GitHub.</a>
                 </p>
                 </div>
             </div>
