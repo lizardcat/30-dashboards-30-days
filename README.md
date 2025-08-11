@@ -15,7 +15,7 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | Day | Dashboard               | Description                                           | Live Demo                                                           | Status         |
 | --- | ----------------------- | ----------------------------------------------------- | ------------------------------------------------------------------- | -------------- |
 | 01  | GitHub Activity Tracker | Personal GitHub contribution and repository analytics | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-01) | 🚧 In Progress |
-| 02  | Weather Multi-City      | Real-time weather data for multiple locations         | [View Demo](#)                                                      | ⏳ Planned     |
+| 02  | Weather Multi-City      | Real-time weather data for multiple locations         | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-02) | ⏳ Planned     |
 | 03  | Crypto Portfolio        | Cryptocurrency tracking and portfolio analysis        | [View Demo](#)                                                      | ⏳ Planned     |
 | 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](#)                                                      | ⏳ Planned     |
 | 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](#)                                                      | ⏳ Planned     |
@@ -56,26 +56,7 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 
 - **Start Date:** 10/08/25
 - **Target Completion:** 10/09/25
-- **Current Progress:** 0/30 dashboards complete
-- **Streak:** 0 days
-
-## 📝 Daily Log
-
-### Day 1 - GitHub Activity Tracker
-
-- **Focus:** Personal GitHub analytics and contribution visualization
-- **Key Features:** Commit history, repository stats, language breakdown
-- **Challenges:** GitHub API rate limiting, data visualization
-- **Learnings:** [To be filled]
-
-_[Daily entries will be added as each dashboard is completed]_
-
-## 🔗 Connect
-
-- **Portfolio:** [alexraza.tech](https://www.alexraza.tech)
-- **LinkedIn:** [linkedin.com/in/aa-raza](https://www.linkedin.com/in/aa-raza)
-- **Bluesky:** [bsky.app/profile/alexraza.tech](https://bsky.app/profile/alexraza.tech)
-
----
+- **Current Progress:** 2/30 dashboards complete
+- **Streak:** 2 days
 
 _Follow along as I build 30 dashboards in 30 days and document the entire journey!_
