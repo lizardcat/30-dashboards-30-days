@@ -203,7 +203,7 @@ export function Dashboard01() {
               <Github className="h-8 w-8 text-blue-400" />
               GitHub Analytics Dashboard
             </h1>
-            <p className="text-gray-400">Advanced GitHub user activity, repository insights, and contribution tracking</p>
+            <p className="text-gray-400">GitHub user activity, repository insights, and contribution tracking</p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-3">
