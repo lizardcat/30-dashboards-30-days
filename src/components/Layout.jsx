@@ -48,6 +48,17 @@ export function Layout({ children }) {
                 >
                     Dashboard 02
                 </Link>
+
+                <Link 
+                    to="/dashboard-03" 
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    location.pathname === '/dashboard-03' 
+                        ? 'bg-dashboard-accent text-white' 
+                        : 'text-gray-300 hover:text-white hover:bg-dashboard-border'
+                    }`}
+                >
+                    Dashboard 03
+                </Link>
                 </nav>
             </div>
             </div>

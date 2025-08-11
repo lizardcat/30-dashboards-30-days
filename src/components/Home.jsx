@@ -19,6 +19,14 @@ export function Home() {
         path: '/dashboard-02',
         icon: CloudSun,
         },
+        {
+        id: '03',
+        title: 'Cryptocurrency Tracker and Portfolio Analyzer',
+        description: 'A simple real-time cryptocurrency tracker',
+        status: 'in-progress',
+        path: '/dashboard-03',
+        icon: TrendingUp,
+        },
         // add more dashboards here
     ]
     
