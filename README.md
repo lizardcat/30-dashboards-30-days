@@ -16,7 +16,7 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | --- | ----------------------- | ----------------------------------------------------- | ------------------------------------------------------------------- | -------------- |
 | 01  | GitHub Activity Tracker | Personal GitHub contribution and repository analytics | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-01) | ✅ Complete    |
 | 02  | Weather Multi-City      | Real-time weather data for multiple locations         | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-02) | ✅ Complete    |
-| 03  | Crypto Portfolio        | Cryptocurrency tracking and portfolio analysis        | [View Demo](#)                                                      | 🚧 In Progress |
+| 03  | Crypto Portfolio        | Cryptocurrency tracking and portfolio analysis        | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-03) | 🚧 In Progress |
 | 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](#)                                                      | ⏳ Planned     |
 | 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](#)                                                      | ⏳ Planned     |
 | 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](#)                                                      | ⏳ Planned     |
