@@ -15,7 +15,7 @@ function App() {
             <Route path="/dashboard-01" element={<Dashboard01 />} />
             <Route path="/dashboard-02" element={<Dashboard02 />} />
             <Route path="/dashboard-03" element={<Dashboard03 />} />
-            <Route path="/dashboard-04" element={<Dashboard03 />} />
+            <Route path="/dashboard-04" element={<Dashboard04 />} />
             {/* Add more dashboard routes as you build them */}
             </Routes>
         </Layout>
