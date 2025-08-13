@@ -14,7 +14,7 @@ export function Home() {
         {
         id: '02',
         title: 'Global Cities Weather Tracker',
-        description: 'Real-time weather data for multiple locations in Africa',
+        description: 'Real-time weather data for multiple locations in Africa and the rest of the world',
         status: 'completed',
         path: '/dashboard-02',
         icon: CloudSun,
@@ -23,9 +23,17 @@ export function Home() {
         id: '03',
         title: 'Cryptocurrency Tracker and Portfolio Analyzer',
         description: 'A simple real-time cryptocurrency tracker',
-        status: 'in-progress',
+        status: 'completed',
         path: '/dashboard-03',
         icon: TrendingUp,
+        },
+        {
+        id: '04',
+        title: 'Stock Market Watchlist',
+        description: 'A simple real-time stock market watchlist',
+        status: 'in-progress',
+        path: '/dashboard-04',
+        icon: Target,
         },
         // add more dashboards here
     ]
@@ -49,22 +57,22 @@ export function Home() {
             30 Dashboards in 30 Days Challenge
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Building functional, data-driven dashboards with real APIs and React. 
-            One dashboard per day for 30 days.
+            Building functional, data-driven dashboards with free APIs and React. 
+            One dashboard per day or so for 30 days.
             </p>
             
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">2</div>
+                <div className="dashboard-stat">3</div>
                 <div className="dashboard-label mt-1">Completed</div>
             </div>
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">28</div>
+                <div className="dashboard-stat">27</div>
                 <div className="dashboard-label mt-1">Remaining</div>
             </div>
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">2</div>
+                <div className="dashboard-stat">3</div>
                 <div className="dashboard-label mt-1">Day Streak</div>
             </div>
             </div>
@@ -123,7 +131,7 @@ export function Home() {
                 <div>
                 <h3 className="font-semibold text-white mb-1">Goal</h3>
                 <p className="text-gray-400 text-sm">
-                    The goal is to build 30 functional dashboards using real data sources and modern web technologies.
+                    The goal is to build 30 functional dashboards using real data sources and Vite + React.
                 </p>
                 </div>
             </div>
@@ -133,7 +141,7 @@ export function Home() {
                 <div>
                 <h3 className="font-semibold text-white mb-1">Timeline</h3>
                 <p className="text-gray-400 text-sm">
-                    I'm aiming for one dashboard per day for 30 consecutive days, documenting the entire process.
+                    I'm aiming for one dashboard per day for 30 consecutive days and will be documenting the entire process.
                 </p>
                 </div>
             </div>
@@ -143,7 +151,7 @@ export function Home() {
                 <div>
                 <h3 className="font-semibold text-white mb-1">Learning</h3>
                 <p className="text-gray-400 text-sm">
-                    This is purely so I can master React, API integration, and deployment practices. You can find the repo for this <a href="https://github.com/lizardcat/30-dashboards-30-days">on my GitHub.</a>
+                    This is purely so I can learn React, API integration, and deployment practices. You can find the repo for this <a href="https://github.com/lizardcat/30-dashboards-30-days">on my GitHub.</a>
                 </p>
                 </div>
             </div>
