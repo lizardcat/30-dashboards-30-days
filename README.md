@@ -16,8 +16,8 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | --- | ----------------------- | ----------------------------------------------------- | ------------------------------------------------------------------- | -------------- |
 | 01  | GitHub Activity Tracker | Personal GitHub contribution and repository analytics | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-01) | ✅ Complete    |
 | 02  | Weather Multi-City      | Real-time weather data for multiple locations         | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-02) | ✅ Complete    |
-| 03  | Crypto Portfolio        | Cryptocurrency tracking and portfolio analysis        | [View Demo](#)                                                      | 🚧 In Progress |
-| 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](#)                                                      | ⏳ Planned     |
+| 03  | Crypto Portfolio        | Cryptocurrency tracking and portfolio analysis        | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-03) | ✅ Complete    |
+| 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](#)                                                      | 🚧 In Progress |
 | 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](#)                                                      | ⏳ Planned     |
 | 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](#)                                                      | ⏳ Planned     |
 | 07  | COVID-19 Statistics     | Regional pandemic data visualization                  | [View Demo](#)                                                      | ⏳ Planned     |
@@ -65,15 +65,22 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 
 - **Focus:** Personal GitHub analytics and contribution visualization
 - **Key Features:** Commit history, repository stats, language breakdown
-- **Challenges:** GitHub API rate limiting, data visualization
-- **Learnings:** Creating a working heatmap for contributions that's similar to GitHub's is proving to be difficult.
+- **Challenges:** GitHub API rate limiting (it's supposed to be 60 requests an hour, but I seem to get limited way faster), data visualization (It seems GitHub doesn't allow scraping data older than 30 days?)
+- **Learnings:** Creating a working heatmap for contributions that's similar to GitHub's is proving to be difficult. I gave up.
 
 ### Day 2 - Multi-City Weather Tracker
 
-- **Focus:** A simple weather tracker that uses the OpenWeather API to pull real-time data for various cities in Africa.
+- **Focus:** A simple weather tracker that uses the OpenWeather API to pull real-time data for various cities in Africa and the world.
 - **Key Features:** Weather data + temperature in C & F, search functionality for any city in the world
 - **Challenges:** Setting up OpenWeather API and securely using it with Netlify
-- **Learnings:** It's actually pretty easy to integrate the OpenWeather API.
+- **Learnings:** It's actually pretty easy to integrate the OpenWeather API. Like Streamlit, Netlify lets you easily add secret variables like API keys.
+
+### Day 3 - Cryptocurrency Tracker
+
+- **Focus:** A simple crypto tracker that uses CoinGecko's free API to pull 7-day data for various coins. Supports personal portfolio holdings
+- **Key Features:** CoinGecko API-powered chart and prices + portfolio holdings section
+- **Challenges:** Making the portfolio holdings section proved challenging, but AI proved useful for learning.
+- **Learnings:** It's nice that CoinGecko let's people use their API for free. You don't even need to sign up!
 
 _[Daily entries will be added as each dashboard is completed]_
 
