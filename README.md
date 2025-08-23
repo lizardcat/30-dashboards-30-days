@@ -17,8 +17,8 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | 01  | GitHub Activity Tracker | Personal GitHub contribution and repository analytics | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-01) | ✅ Complete    |
 | 02  | Weather Multi-City      | Real-time weather data for multiple locations         | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-02) | ✅ Complete    |
 | 03  | Crypto Portfolio        | Cryptocurrency tracking and portfolio analysis        | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-03) | ✅ Complete    |
-| 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](#)                                                      | 🚧 In Progress |
-| 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](#)                                                      | ⏳ Planned     |
+| 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-04) | ✅ Complete    |
+| 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](#)                                                      | 🚧 In Progress |
 | 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](#)                                                      | ⏳ Planned     |
 | 07  | COVID-19 Statistics     | Regional pandemic data visualization                  | [View Demo](#)                                                      | ⏳ Planned     |
 | 08  | NASA Space Gallery      | Astronomy picture of the day archive                  | [View Demo](#)                                                      | ⏳ Planned     |
@@ -81,6 +81,13 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 - **Key Features:** CoinGecko API-powered chart and prices + portfolio holdings section
 - **Challenges:** Making the portfolio holdings section proved challenging, but AI proved useful for learning.
 - **Learnings:** It's nice that CoinGecko let's people use their API for free. You don't even need to sign up!
+
+### Day 4 - Stock Market Watchlist
+
+- **Focus:** Real-time stock market dashboard using Alpha Vantage's free API to track stock prices, changes, and basic market data with an interactive watchlist feature.
+- **Key Features:** Live stock price updates, search functionality for adding stocks, expandable 30-day price charts, market overview with sector distribution, and portfolio-style watchlist management.
+- **Challenges:** Alpha Vantage's free tier limits you to 5 API calls per minute, so I had to implement smart rate limiting and use mock data for most stocks to avoid hitting quotas. The environment variable setup for Vite (using import.meta.env instead of process.env) was also a learning curve.
+- **Learnings:** API rate limiting is a real constraint that affects UX design - you have to balance live data with performance. Alpha Vantage provides solid financial data but requires an API key and careful request management. The stock market visualization patterns are quite different from crypto - more focus on traditional metrics like P/E ratios and market cap.
 
 _[Daily entries will be added as each dashboard is completed]_
 
