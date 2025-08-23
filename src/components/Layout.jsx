@@ -70,6 +70,16 @@ export function Layout({ children }) {
                 >
                     Dashboard 04
                 </Link>
+                <Link 
+                    to="/dashboard-05" 
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    location.pathname === '/dashboard-04' 
+                        ? 'bg-dashboard-accent text-white' 
+                        : 'text-gray-300 hover:text-white hover:bg-dashboard-border'
+                    }`}
+                >
+                    Dashboard 05
+                </Link>
                 </nav>
             </div>
             </div>
