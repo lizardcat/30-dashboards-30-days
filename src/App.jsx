@@ -4,6 +4,7 @@ import { Home } from './components/Home'
 import { Dashboard01 } from './components/dashboards/Dashboard01'
 import { Dashboard02 } from './components/dashboards/Dashboard02'
 import { Dashboard03 } from './components/dashboards/Dashboard03'
+import { Dashboard04 } from './components/dashboards/Dashboard04'
 import './index.css'
 
 function App() {
