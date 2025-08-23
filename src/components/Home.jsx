@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Calendar, Target, TrendingUp, Github, CloudSun } from 'lucide-react'
+import { Calendar, Target, TrendingUp, Github, CloudSun, Newspaper } from 'lucide-react'
 
 export function Home() {
     const dashboards = [
@@ -31,9 +31,17 @@ export function Home() {
         id: '04',
         title: 'Stock Market Watchlist',
         description: 'A simple real-time stock market watchlist',
-        status: 'in-progress',
+        status: 'completed',
         path: '/dashboard-04',
         icon: Target,
+        },
+        {
+        id: '05',
+        title: 'News Aggregator',
+        description: 'A simple real-time stock market watchlist',
+        status: 'in-progress',
+        path: '/dashboard-05',
+        icon: Newspaper,
         },
         // add more dashboards here
     ]
@@ -57,22 +65,22 @@ export function Home() {
             30 Dashboards in 30 Days Challenge
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Building functional, data-driven dashboards with free APIs and React. 
-            One dashboard per day or so for 30 days.
+            I'm building functional, data-driven dashboards with free APIs and React. 
+            One dashboard per day or so for 30 days!
             </p>
             
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">3</div>
+                <div className="dashboard-stat">4</div>
                 <div className="dashboard-label mt-1">Completed</div>
             </div>
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">27</div>
+                <div className="dashboard-stat">26</div>
                 <div className="dashboard-label mt-1">Remaining</div>
             </div>
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">3</div>
+                <div className="dashboard-stat">4</div>
                 <div className="dashboard-label mt-1">Day Streak</div>
             </div>
             </div>
@@ -157,6 +165,31 @@ export function Home() {
             </div>
             </div>
         </div>
+        {/* Footer */}
+            <div className="dashboard-card mt-12">
+            <div className="text-center">
+                <p className="text-gray-400 text-sm mb-4">
+                30 Days 30 Dashboards Challenge • Built with React + Vite
+                </p>
+                
+                {/* Personal Attribution */}
+                <div className="flex justify-center">
+                <div className="bg-dashboard-card border border-dashboard-border rounded-lg px-4 py-3">
+                    <p className="text-gray-300 text-sm">
+                    Made with ❤️ by{' '}
+                    <a 
+                        href="https://github.com/lizardcat" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-dashboard-accent hover:text-blue-300 font-medium underline decoration-dashboard-accent/30 hover:decoration-blue-300 underline-offset-2 transition-colors duration-200"
+                    >
+                        Alex Raza
+                    </a>
+                    </p>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
     )
 }
