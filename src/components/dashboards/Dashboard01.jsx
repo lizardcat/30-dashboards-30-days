@@ -694,6 +694,31 @@ export function Dashboard01() {
           </>
         )}
       </div>
+      {/* Footer */}
+        <div className="mt-12 pt-8 border-t border-slate-700 pb-8">
+          <div className="text-center">
+            <p className="text-gray-400 text-sm mb-4">
+              Dashboard #1 of 30 Days 30 Dashboards Challenge • Live data via GitHub API
+            </p>
+            
+            {/* Personal Attribution */}
+            <div className="flex justify-center">
+              <div className="bg-slate-800 border border-slate-600 rounded-lg px-4 py-3">
+                <p className="text-gray-300 text-sm">
+                  Made with ❤️ by{' '}
+                  <a 
+                    href="https://github.com/lizardcat" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 font-medium underline decoration-blue-400/30 hover:decoration-blue-300 underline-offset-2 transition-colors duration-200"
+                  >
+                    Alex Raza
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   )
 }

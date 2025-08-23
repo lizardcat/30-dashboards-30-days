@@ -513,8 +513,33 @@ export function Dashboard02() {
                 </div>
 
                 {/* Footer */}
-                <div className="text-center mt-8 text-blue-200">
-                    <p>Weather data updates every 10 minutes</p>
+                <div className="mt-12 pt-8 border-t border-white/20">
+                <div className="text-center">
+                    <p className="text-blue-200 mb-4">
+                    Dashboard #2 of 30 Days 30 Dashboards Challenge • {API_KEY ? 'Live data via OpenWeatherMap API' : 'Demo Mode'}
+                    </p>
+                    
+                    {/* Personal Attribution */}
+                    <div className="flex justify-center">
+                    <div className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 backdrop-blur-sm">
+                        <p className="text-blue-100 text-sm">
+                        Made with ❤️ by{' '}
+                        <a 
+                            href="https://github.com/lizardcat" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-blue-300 hover:text-blue-200 font-medium underline decoration-blue-300/30 hover:decoration-blue-200 underline-offset-2 transition-colors duration-200"
+                        >
+                            Alex Raza
+                        </a>
+                        </p>
+                    </div>
+                    </div>
+                    
+                    <p className="text-blue-300 text-sm mt-4">
+                    Weather data updates every 10 minutes
+                    </p>
+                </div>
                 </div>
             </div>
         </div>

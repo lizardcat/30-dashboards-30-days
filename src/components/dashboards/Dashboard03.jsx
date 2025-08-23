@@ -514,6 +514,31 @@ export function Dashboard03() {
                         </table>
                     </div>
                 </div>
+                {/* Footer*/}
+            <div className="mt-12 pt-8 border-t border-slate-700 pb-8">
+            <div className="text-center">
+                <p className="text-slate-400 text-sm mb-4">
+                Dashboard #3 of 30 Days 30 Dashboards Challenge • Live data via CoinGecko API
+            </p>
+            
+            {/* Personal Attribution */}
+            <div className="flex justify-center">
+                <div className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-3 backdrop-blur-sm">
+                    <p className="text-slate-300 text-sm">
+                    Made with ❤️ by{' '}
+                    <a 
+                        href="https://github.com/lizardcat" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-400 hover:text-blue-300 font-medium underline decoration-blue-400/30 hover:decoration-blue-300 underline-offset-2 transition-colors duration-200"
+                    >
+                        Alex Raza
+                    </a>
+                    </p>
+                </div>
+                </div>
+                </div>
+            </div>
             </div>
         </div>
     );
