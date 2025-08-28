@@ -215,12 +215,30 @@ export function Dashboard05() {
         setSearchLoading(false);
     };
 
-    // Load bookmarks from memory state (persistent during session)
+    // Load bookmarks from browser storage on component mount
     useEffect(() => {
-        // In a real app, you'd load from a backend or localStorage
-        // For this demo, bookmarks persist during the session
-        setBookmarks(new Set());
+        try {
+            const savedBookmarks = JSON.parse(window.sessionStorage.getItem('newsBookmarks') || '[]');
+            const savedBookmarkIds = new Set(savedBookmarks.map(b => b.id));
+            setBookmarkedArticles(savedBookmarks);
+            setBookmarks(savedBookmarkIds);
+            console.log(`Loaded ${savedBookmarks.length} bookmarks from storage`);
+        } catch (error) {
+            console.error('Error loading bookmarks:', error);
+            setBookmarkedArticles([]);
+            setBookmarks(new Set());
+        }
     }, []);
+
+    // Save bookmarks to browser storage whenever they change
+    useEffect(() => {
+        try {
+            window.sessionStorage.setItem('newsBookmarks', JSON.stringify(bookmarkedArticles));
+            console.log(`Saved ${bookmarkedArticles.length} bookmarks to storage`);
+        } catch (error) {
+            console.error('Error saving bookmarks:', error);
+        }
+    }, [bookmarkedArticles]);
 
     // Toggle bookmark
     const toggleBookmark = (article) => {
@@ -541,13 +559,30 @@ export function Dashboard05() {
                     </div>
                 )}
 
-                {/* Bookmarked Articles Section */}
+                {/* Bookmarked Articles Section - Always Visible if Any Exist */}
                 {bookmarkedArticles.length > 0 && (
-                    <div className="mt-12">
-                        <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                            <Bookmark size={24} className="text-blue-600" />
-                            Bookmarked Articles ({bookmarkedArticles.length})
-                        </h2>
+                    <div className="mt-12 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-2xl p-8 border border-emerald-200">
+                        <div className="flex items-center justify-between mb-6">
+                            <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                                <div className="p-2 bg-emerald-500 rounded-lg">
+                                    <Bookmark size={20} className="text-white fill-white" />
+                                </div>
+                                Your Bookmarked Articles ({bookmarkedArticles.length})
+                            </h2>
+                            <button
+                                onClick={() => {
+                                    setBookmarkedArticles([]);
+                                    setBookmarks(new Set());
+                                    window.sessionStorage.removeItem('newsBookmarks');
+                                }}
+                                className="text-sm text-slate-500 hover:text-red-600 transition-colors px-3 py-1 rounded-lg hover:bg-red-50"
+                            >
+                                Clear All
+                            </button>
+                        </div>
+                        <p className="text-slate-600 mb-6 text-sm">
+                            Articles you've bookmarked are saved in your browser and will persist between sessions.
+                        </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {bookmarkedArticles.map((article) => (
                                 <NewsCard 
