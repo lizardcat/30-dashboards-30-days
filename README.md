@@ -18,8 +18,8 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | 02  | Weather Multi-City      | Real-time weather data for multiple locations         | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-02) | ✅ Complete    |
 | 03  | Crypto Portfolio        | Cryptocurrency tracking and portfolio analysis        | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-03) | ✅ Complete    |
 | 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-04) | ✅ Complete    |
-| 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](#)                                                      | 🚧 In Progress |
-| 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](#)                                                      | ⏳ Planned     |
+| 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-05) | ✅ Complete    |
+| 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](#)                                                      | 🚧 In Progress |
 | 07  | COVID-19 Statistics     | Regional pandemic data visualization                  | [View Demo](#)                                                      | ⏳ Planned     |
 | 08  | NASA Space Gallery      | Astronomy picture of the day archive                  | [View Demo](#)                                                      | ⏳ Planned     |
 | 09  | Transit Tracker         | Public transportation status and delays               | [View Demo](#)                                                      | ⏳ Planned     |
@@ -88,6 +88,13 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 - **Key Features:** Live stock price updates, search functionality for adding stocks, expandable 30-day price charts, market overview with sector distribution, and portfolio-style watchlist management.
 - **Challenges:** Alpha Vantage's free tier limits you to 5 API calls per minute, so I had to implement smart rate limiting and use mock data for most stocks to avoid hitting quotas. The environment variable setup for Vite (using import.meta.env instead of process.env) was also a learning curve.
 - **Learnings:** API rate limiting is a real constraint that affects UX design - you have to balance live data with performance. Alpha Vantage provides solid financial data but requires an API key and careful request management. The stock market visualization patterns are quite different from crypto - more focus on traditional metrics like P/E ratios and market cap.
+
+**### Day 5 - Global News Hub**
+
+- **Focus:** A comprehensive news aggregator dashboard using NewsAPI to deliver real-time headlines with search, filtering, and bookmarking capabilities across multiple countries and categories.
+- **Key Features:** Live news feeds from 150,000+ sources, intelligent search with fallback mechanisms, country/category filtering with priority given to high-coverage markets, session-based bookmarking system, and responsive card-based layout with image previews and relative timestamps.
+- **Challenges:** NewsAPI's free tier restricts the `/everything` endpoint for production use, requiring fallback strategies between different endpoints. Rate limiting (1000 requests/day) meant implementing search debouncing and smart caching. The API's inconsistent data quality required extensive filtering to remove `[Removed]` content and handle missing images gracefully. For some reason, the API is only pulling news from the US, so my country filter is basically useless. Not sure how to fix this.
+- **Learnings:** News APIs have different coverage quality by region but US sources are much more reliable than smaller markets.
 
 _[Daily entries will be added as each dashboard is completed]_
 
