@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Calendar, Target, TrendingUp, Github, CloudSun, Newspaper } from 'lucide-react'
+import { Calendar, Target, TrendingUp, Github, CloudSun, Newspaper, Fan } from 'lucide-react'
 
 export function Home() {
     const dashboards = [
@@ -39,9 +39,17 @@ export function Home() {
         id: '05',
         title: 'News Aggregator',
         description: 'A simple real-time stock market watchlist',
-        status: 'in-progress',
+        status: 'completed',
         path: '/dashboard-05',
         icon: Newspaper,
+        },
+        {
+        id: '06',
+        title: 'Air Quality Monitor',
+        description: 'Global air quality index tracker',
+        status: 'in-progress',
+        path: '/dashboard-06',
+        icon: Fan,
         },
         // add more dashboards here
     ]
@@ -72,15 +80,15 @@ export function Home() {
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">4</div>
+                <div className="dashboard-stat">5</div>
                 <div className="dashboard-label mt-1">Completed</div>
             </div>
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">26</div>
+                <div className="dashboard-stat">25</div>
                 <div className="dashboard-label mt-1">Remaining</div>
             </div>
             <div className="dashboard-card text-center">
-                <div className="dashboard-stat">4</div>
+                <div className="dashboard-stat">5</div>
                 <div className="dashboard-label mt-1">Day Streak</div>
             </div>
             </div>
