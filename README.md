@@ -89,7 +89,7 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 - **Challenges:** Alpha Vantage's free tier limits you to 5 API calls per minute, so I had to implement smart rate limiting and use mock data for most stocks to avoid hitting quotas. The environment variable setup for Vite (using import.meta.env instead of process.env) was also a learning curve.
 - **Learnings:** API rate limiting is a real constraint that affects UX design - you have to balance live data with performance. Alpha Vantage provides solid financial data but requires an API key and careful request management. The stock market visualization patterns are quite different from crypto - more focus on traditional metrics like P/E ratios and market cap.
 
-**### Day 5 - Global News Hub**
+### Day 5 - Global News Hub
 
 - **Focus:** A comprehensive news aggregator dashboard using NewsAPI to deliver real-time headlines with search, filtering, and bookmarking capabilities across multiple countries and categories.
 - **Key Features:** Live news feeds from 150,000+ sources, intelligent search with fallback mechanisms, country/category filtering with priority given to high-coverage markets, session-based bookmarking system, and responsive card-based layout with image previews and relative timestamps.
