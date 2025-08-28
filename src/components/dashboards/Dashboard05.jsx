@@ -605,7 +605,7 @@ export function Dashboard05() {
                     <p className="text-slate-400 mt-2">
                         {API_KEY 
                             ? 'Real-time news from multiple sources with smart caching and rate limiting'
-                            : 'Add your NewsAPI key to environment variables for live news data'}
+                            : 'My NewsAPI key is not working. Sorry! This page is using dummy data.'}
                     </p>
                     <div className="mt-6 pt-6 border-t border-slate-700 flex justify-center">
                         <div className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-3 backdrop-blur-sm">
