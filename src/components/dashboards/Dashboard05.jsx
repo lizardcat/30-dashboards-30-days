@@ -1,5 +1,52 @@
-import { useState, useEffect } from 'react';
-import { Search, Clock, ExternalLink, Bookmark, Filter, Globe, TrendingUp, Calendar, Gamepad, RefreshCw, Check } from 'lucide-react';
+// Extract clean source name from URL
+    const getSourceFromUrl = (url) => {
+        try {
+            const domain = new URL(url).hostname;
+            // Clean up common domains
+            const sourceMap = {
+                'cnn.com': 'CNN',
+                'www.cnn.com': 'CNN',
+                'bbc.com': 'BBC News',
+                'www.bbc.com': 'BBC News',
+                'reuters.com': 'Reuters',
+                'www.reuters.com': 'Reuters',
+                'theguardian.com': 'The Guardian',
+                'www.theguardian.com': 'The Guardian',
+                'washingtonpost.com': 'Washington Post',
+                'www.washingtonpost.com': 'Washington Post',
+                'nytimes.com': 'New York Times',
+                'www.nytimes.com': 'New York Times',
+                'bloomberg.com': 'Bloomberg',
+                'www.bloomberg.com': 'Bloomberg',
+                'wsj.com': 'Wall Street Journal',
+                'www.wsj.com': 'Wall Street Journal',
+                'nbcnews.com': 'NBC News',
+                'www.nbcnews.com': 'NBC News',
+                'abcnews.go.com': 'ABC News',
+                'cbsnews.com': 'CBS News',
+                'www.cbsnews.com': 'CBS News',
+                'foxnews.com': 'Fox News',
+                'www.foxnews.com': 'Fox News',
+                'usatoday.com': 'USA Today',
+                'www.usatoday.com': 'USA Today',
+                'apnews.com': 'Associated Press',
+                'www.apnews.com': 'Associated Press',
+                'politico.com': 'Politico',
+                'www.politico.com': 'Politico',
+                'techcrunch.com': 'TechCrunch',
+                'www.techcrunch.com': 'TechCrunch',
+                'engadget.com': 'Engadget',
+                'www.engadget.com': 'Engadget',
+                'theverge.com': 'The Verge',
+                'www.theverge.com': 'The Verge'
+            };
+            
+            return sourceMap[domain] || domain.replace('www.', '').replace('.com', '').replace('.co.uk', '').replace('.org', '');
+        } catch {
+            return null;
+        }
+    };import { useState, useEffect } from 'react';
+import { Search, Clock, ExternalLink, Bookmark, Filter, Globe, TrendingUp, Calendar, Eye, RefreshCw, Check } from 'lucide-react';
 
 export function Dashboard05() {
     const [articles, setArticles] = useState([]);
@@ -13,9 +60,9 @@ export function Dashboard05() {
     const [error, setError] = useState(null);
     const [bookmarks, setBookmarks] = useState(new Set());
 
-    // NewsAPI configuration
-    const API_KEY = import.meta.env.VITE_NEWSAPI_KEY;
-    const BASE_URL = 'https://newsapi.org/v2';
+    // Currents API configuration
+    const API_KEY = import.meta.env.VITE_CURRENTS_API_KEY;
+    const BASE_URL = 'https://api.currentsapi.services/v1';
 
     // Rate limiting helper
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -25,7 +72,6 @@ export function Dashboard05() {
         { id: 'general', name: 'General', icon: Globe },
         { id: 'business', name: 'Business', icon: TrendingUp },
         { id: 'technology', name: 'Technology', icon: Globe },
-        { id: 'gaming', name: 'Gaming', icon: Gamepad },
         { id: 'sports', name: 'Sports', icon: Globe },
         { id: 'health', name: 'Health', icon: Globe },
         { id: 'science', name: 'Science', icon: Globe },
@@ -99,10 +145,10 @@ export function Dashboard05() {
         }));
     };
 
-    // Fetch news from NewsAPI
+    // Fetch news from Currents API
     const fetchNews = async (endpoint, params = {}) => {
         if (!API_KEY) {
-            console.warn('NewsAPI key not found, using mock data');
+            console.warn('Currents API key not found, using mock data');
             return generateMockArticles();
         }
 
@@ -115,11 +161,25 @@ export function Dashboard05() {
             }
             lastApiCall = Date.now();
 
-            const queryParams = new URLSearchParams({
+            // Different parameter structure for Currents API
+            let queryParams = new URLSearchParams({
                 apiKey: API_KEY,
-                pageSize: 50,
                 ...params
             });
+
+            // Currents API uses different parameter names
+            if (params.country) {
+                queryParams.set('country', params.country);
+                queryParams.delete('country'); // Remove if it was added above
+                queryParams.set('country', params.country);
+            }
+            if (params.category) {
+                queryParams.set('category', params.category);
+            }
+            if (params.q) {
+                queryParams.set('keywords', params.q);
+                queryParams.delete('q');
+            }
 
             const response = await fetch(`${BASE_URL}/${endpoint}?${queryParams}`);
             
@@ -130,26 +190,35 @@ export function Dashboard05() {
             const data = await response.json();
             
             if (data.status === 'ok') {
-                const filteredArticles = data.articles.map((article, index) => ({
+                const articles = data.news || data.articles || [];
+                const filteredArticles = articles.map((article, index) => ({
                     ...article,
-                    id: article.url || `article-${index}-${Date.now()}`
+                    id: article.url || `article-${index}-${Date.now()}`,
+                    // Map Currents API fields to NewsAPI structure
+                    urlToImage: article.image || article.urlToImage,
+                    publishedAt: article.published || article.publishedAt,
+                    // Better source mapping for Currents API
+                    source: { 
+                        name: article.source || 
+                              article.domain || 
+                              (article.url ? new URL(article.url).hostname : 'Unknown Source')
+                    }
                 })).filter(article => 
                     article.title && 
                     article.title !== '[Removed]' && 
                     article.description && 
-                    article.description !== '[Removed]' &&
-                    article.source &&
-                    article.source.name !== '[Removed]'
+                    article.description !== '[Removed]'
                 );
                 
-                console.log(`API returned ${data.articles.length} articles, filtered to ${filteredArticles.length}`);
+                console.log(`Currents API returned ${articles.length} articles, filtered to ${filteredArticles.length}`);
+                console.log('Sample article structure:', articles[0]); // Debug log
                 return filteredArticles;
             } else {
-                console.error('API Error:', data);
+                console.error('Currents API Error:', data);
                 throw new Error(data.message || 'Unknown API error');
             }
         } catch (error) {
-            console.error('Error fetching news:', error);
+            console.error('Error fetching news from Currents API:', error);
             setError(error.message);
             return generateMockArticles();
         }
@@ -160,7 +229,7 @@ export function Dashboard05() {
         setLoading(true);
         setError(null);
         try {
-            const articles = await fetchNews('top-headlines', {
+            const articles = await fetchNews('latest-news', {
                 category: selectedCategory,
                 country: selectedCountry
             });
@@ -183,23 +252,11 @@ export function Dashboard05() {
         setSearchLoading(true);
         setError(null);
         try {
-            // Try the everything endpoint first
-            let articles = await fetchNews('everything', {
-                q: encodeURIComponent(query.trim()),
-                sortBy: 'publishedAt',
-                language: 'en',
-                pageSize: 50
+            // Currents API uses 'search' endpoint with 'keywords' parameter
+            let articles = await fetchNews('search', {
+                q: query.trim(),
+                language: 'en'
             });
-            
-            // If everything endpoint fails or returns no results, try top-headlines with search
-            if (!articles || articles.length === 0) {
-                console.log('Everything endpoint failed, trying top-headlines with search...');
-                articles = await fetchNews('top-headlines', {
-                    q: encodeURIComponent(query.trim()),
-                    country: selectedCountry,
-                    pageSize: 50
-                });
-            }
             
             setArticles(articles);
         } catch (error) {
@@ -314,6 +371,7 @@ export function Dashboard05() {
 
     const NewsCard = ({ article }) => {
         const isBookmarked = bookmarks.has(article.id);
+        const sourceName = getSourceFromUrl(article.url);
         
         return (
             <div className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 group">
@@ -345,10 +403,44 @@ export function Dashboard05() {
                 )}
                 
                 <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                        <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
-                            {article.source.name}
-                        </span>
+                    {/* Author and source header */}
+                    <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-3">
+                            {article.author ? (
+                                <div className="flex items-center gap-2">
+                                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                                        <span className="text-white text-xs font-bold">
+                                            {article.author.charAt(0).toUpperCase()}
+                                        </span>
+                                    </div>
+                                    <span className="text-sm font-semibold text-slate-700">
+                                        {article.author}
+                                    </span>
+                                </div>
+                            ) : sourceName ? (
+                                <div className="flex items-center gap-2">
+                                    <Globe size={16} className="text-slate-400" />
+                                    <span className="text-sm font-medium text-slate-600">
+                                        {sourceName}
+                                    </span>
+                                </div>
+                            ) : (
+                                <div className="flex items-center gap-2">
+                                    <Globe size={16} className="text-slate-400" />
+                                    <span className="text-sm text-slate-500">
+                                        News Article
+                                    </span>
+                                </div>
+                            )}
+                            
+                            {/* Show source as secondary info if we have author */}
+                            {article.author && sourceName && (
+                                <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded-full">
+                                    {sourceName}
+                                </span>
+                            )}
+                        </div>
+                        
                         <div className="flex items-center text-xs text-slate-500 gap-1">
                             <Clock size={12} />
                             {formatRelativeTime(article.publishedAt)}
@@ -363,12 +455,7 @@ export function Dashboard05() {
                         {article.description}
                     </p>
 
-                    <div className="flex items-center justify-between">
-                        <div className="text-xs text-slate-500">
-                            {article.author && (
-                                <span>By {article.author}</span>
-                            )}
-                        </div>
+                    <div className="flex items-center justify-end">
                         <a
                             href={article.url}
                             target="_blank"
@@ -552,6 +639,20 @@ export function Dashboard05() {
                     ))}
                 </div>
 
+                {/* Empty State for No Bookmarks */}
+                {bookmarkedArticles.length === 0 && articles.length > 0 && (
+                    <div className="mt-12 bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 border border-slate-200 text-center">
+                        <div className="p-4 bg-slate-100 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <Bookmark className="text-slate-400" size={24} />
+                        </div>
+                        <h3 className="text-lg font-bold text-slate-700 mb-2">No Bookmarks Yet</h3>
+                        <p className="text-slate-600 text-sm">
+                            Click the bookmark icon on any article to save it for later reading. 
+                            Your bookmarks will be saved in your browser.
+                        </p>
+                    </div>
+                )}
+
                 {articles.length === 0 && !loading && (
                     <div className="text-center py-12 bg-white rounded-xl border border-slate-200">
                         <Globe className="text-slate-400 mx-auto mb-4" size={64} />
@@ -605,7 +706,7 @@ export function Dashboard05() {
                     <p className="text-slate-400 mt-2">
                         {API_KEY 
                             ? 'Real-time news from multiple sources with smart caching and rate limiting'
-                            : 'My NewsAPI key is not working. Sorry! This page is using dummy data.'}
+                            : 'Add your NewsAPI key to environment variables for live news data'}
                     </p>
                     <div className="mt-6 pt-6 border-t border-slate-700 flex justify-center">
                         <div className="bg-slate-700/50 border border-slate-600 rounded-lg px-4 py-3 backdrop-blur-sm">
