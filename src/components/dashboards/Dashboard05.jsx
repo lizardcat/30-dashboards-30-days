@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, Clock, ExternalLink, Bookmark, Filter, Globe, TrendingUp, Calendar, Eye, RefreshCw, Check } from 'lucide-react';
+import { Search, Clock, ExternalLink, Bookmark, Filter, Globe, TrendingUp, Calendar, Gamepad, RefreshCw, Check } from 'lucide-react';
 
 export function Dashboard05() {
     const [articles, setArticles] = useState([]);
@@ -25,6 +25,7 @@ export function Dashboard05() {
         { id: 'general', name: 'General', icon: Globe },
         { id: 'business', name: 'Business', icon: TrendingUp },
         { id: 'technology', name: 'Technology', icon: Globe },
+        { id: 'gaming', name: 'Gaming', icon: Gamepad },
         { id: 'sports', name: 'Sports', icon: Globe },
         { id: 'health', name: 'Health', icon: Globe },
         { id: 'science', name: 'Science', icon: Globe },
