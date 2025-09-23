@@ -19,8 +19,8 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | 03  | Crypto Portfolio        | Cryptocurrency tracking and portfolio analysis        | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-03) | ✅ Complete    |
 | 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-04) | ✅ Complete    |
 | 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-05) | ✅ Complete    |
-| 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](#)                                                      | 🚧 In Progress |
-| 07  | COVID-19 Statistics     | Regional pandemic data visualization                  | [View Demo](#)                                                      | ⏳ Planned     |
+| 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-06) | ✅ Complete    |
+| 07  | COVID-19 Statistics     | Regional pandemic data visualization                  | [View Demo](#)                                                      | 🚧 In Progress |
 | 08  | NASA Space Gallery      | Astronomy picture of the day archive                  | [View Demo](#)                                                      | ⏳ Planned     |
 | 09  | Transit Tracker         | Public transportation status and delays               | [View Demo](#)                                                      | ⏳ Planned     |
 | 10  | Energy Consumption      | Global energy usage by country                        | [View Demo](#)                                                      | ⏳ Planned     |
@@ -95,6 +95,13 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 - **Key Features:** Live news feeds from 150,000+ sources, intelligent search with fallback mechanisms, country/category filtering with priority given to high-coverage markets, session-based bookmarking system, and responsive card-based layout with image previews and relative timestamps.
 - **Challenges:** NewsAPI's free tier restricts the `/everything` endpoint for production use, requiring fallback strategies between different endpoints. Rate limiting (1000 requests/day) meant implementing search debouncing and smart caching. The API's inconsistent data quality required extensive filtering to remove `[Removed]` content and handle missing images gracefully. For some reason, the API is only pulling news from the US, so my country filter is basically useless. Not sure how to fix this.
 - **Learnings:** News APIs have different coverage quality by region but US sources are much more reliable than smaller markets.
+
+### Day 6 - Air Quality Index Tracker
+
+- **Focus:** A global air quality index tracker with comprehensive monitoring capabilities
+- **Key Features:** Real-time AQI data, intelligent search with city lookup, primary/extended city categorization with visual distinction, pollutant breakdowns (PM2.5, PM10, O3, NO2, CO), color-coded AQI cards, auto-refresh every 10 minutes, session-based error handling with mock fallback data, and educational FAQ section with AQI guide.
+- **Challenges:** There were no major challenges for this one. Using the AQICN API is relatively straightforward. It has rate limits, but it's very generous. Many cities don't really return any data unfortunately because of poor station coverage. I'd have liked to keep the focus on Africa countries exclusively, but that's not realistic.
+- **Learnings:** Air quality data availability varies dramatically by region, with major Asian cities (Beijing, Delhi) having excellent coverage while smaller African cities lack reliable monitoring stations.
 
 _[Daily entries will be added as each dashboard is completed]_
 
