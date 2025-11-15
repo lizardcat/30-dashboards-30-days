@@ -58,7 +58,7 @@ export function Home() {
             id: '07',
             title: 'COVID-19 Statistics',
             description: 'Regional pandemic data visualization',
-            status: 'in-progress',
+            status: 'completed',
             path: '/dashboard-07',
             icon: BarChart3,
         },
@@ -66,7 +66,7 @@ export function Home() {
             id: '08',
             title: 'NASA Space Gallery',
             description: 'Astronomy picture of the day archive',
-            status: 'planned',
+            status: 'in-progress',
             path: '/dashboard-08',
             icon: Rocket,
         },
@@ -307,7 +307,7 @@ export function Home() {
                 </div>
             </div>
             
-            {/* Dashboard Grid - Show first 6 or all based on state */}
+            {/* Dashboard Grid - Show first 9 or all based on state */}
             <div>
                 <h2 className="dashboard-subheader">
                     {showFullList ? 'All 30 Dashboards' : 'Latest Dashboards'}
@@ -328,7 +328,7 @@ export function Home() {
                 )}
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {(showFullList ? dashboards : dashboards.slice(0, 6)).map((dashboard) => {
+                    {(showFullList ? dashboards : dashboards.slice(0, 9)).map((dashboard) => {
                         const IconComponent = dashboard.icon
                         
                         return (
