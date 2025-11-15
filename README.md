@@ -20,8 +20,8 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | 04  | Stock Market Watchlist  | Real-time stock prices and market trends              | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-04) | ✅ Complete    |
 | 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-05) | ✅ Complete    |
 | 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-06) | ✅ Complete    |
-| 07  | COVID-19 Statistics     | Regional pandemic data visualization                  | [View Demo](#)                                                      | 🚧 In Progress |
-| 08  | NASA Space Gallery      | Astronomy picture of the day archive                  | [View Demo](#)                                                      | ⏳ Planned     |
+| 07  | COVID-19 Statistics     | Regional pandemic data visualization                  | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-07) | ✅ Complete    |
+| 08  | NASA Space Gallery      | Astronomy picture of the day archive                  | [View Demo](#)                                                      | 🚧 In Progress |
 | 09  | Transit Tracker         | Public transportation status and delays               | [View Demo](#)                                                      | ⏳ Planned     |
 | 10  | Energy Consumption      | Global energy usage by country                        | [View Demo](#)                                                      | ⏳ Planned     |
 | 11  | Website Analytics       | Mock analytics dashboard with insights                | [View Demo](#)                                                      | ⏳ Planned     |
@@ -102,6 +102,13 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 - **Key Features:** Real-time AQI data, intelligent search with city lookup, primary/extended city categorization with visual distinction, pollutant breakdowns (PM2.5, PM10, O3, NO2, CO), color-coded AQI cards, auto-refresh every 10 minutes, session-based error handling with mock fallback data, and educational FAQ section with AQI guide.
 - **Challenges:** There were no major challenges for this one. Using the AQICN API is relatively straightforward. It has rate limits, but it's very generous. Many cities don't really return any data unfortunately because of poor station coverage. I'd have liked to keep the focus on Africa countries exclusively, but that's not realistic.
 - **Learnings:** Air quality data availability varies dramatically by region, with major Asian cities (Beijing, Delhi) having excellent coverage while smaller African cities lack reliable monitoring stations.
+
+### Day 7 - COVID-19 Africa Tracker
+
+- **Focus:** A regional pandemic data visualization dashboard with Africa as the main focus, featuring an interactive map and comprehensive statistics
+- **Key Features:** Real-time COVID-19 data via disease.sh API, interactive SVG map of Africa with 54+ countries, click-to-select country details, color-coded regions based on cases/deaths/vaccination rates, regional breakdowns (North, West, East, Southern, Central Africa), top countries rankings, live stats cards (total cases, deaths, recovered, vaccination rates), auto-refresh every 10 minutes, search functionality, and three view modes (cases, deaths, vaccinated).
+- **Challenges:** Building a simplified SVG map of Africa from scratch was interesting - had to manually position ~54 countries in a grid that roughly matches their geographic locations. Also had to create a comprehensive mapping between ISO country codes and African regions. The disease.sh API doesn't provide vaccination data directly, so I used test counts as a proxy metric.
+- **Learnings:** The disease.sh API is fantastic - completely free, no API key required, and provides clean, well-structured data from Johns Hopkins CSSE. COVID-19 data reporting varies significantly across African nations, with South Africa having the most comprehensive statistics while some smaller countries have limited reporting infrastructure.
 
 _[Daily entries will be added as each dashboard is completed]_
 
