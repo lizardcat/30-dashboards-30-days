@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Home, BarChart3, ChevronDown, Github, CloudSun, TrendingUp, Target, Newspaper, AirVent } from 'lucide-react'
+import { Home, BarChart3, ChevronDown, Github, CloudSun, TrendingUp, Target, Newspaper, AirVent, Rocket } from 'lucide-react'
 
 export function Layout({ children }) {
     const location = useLocation()
@@ -13,7 +13,8 @@ export function Layout({ children }) {
         { id: '04', title: 'Stock Watchlist', path: '/dashboard-04', icon: Target },
         { id: '05', title: 'News Hub', path: '/dashboard-05', icon: Newspaper },
         { id: '06', title: 'Air Quality Tracker', path: '/dashboard-06', icon: AirVent },
-        { id: '07', title: "COVID-19 Statistics", path: '/dashboard-07', icon: BarChart3}
+        { id: '07', title: "COVID-19 Statistics", path: '/dashboard-07', icon: BarChart3},
+        { id: '08', title: "NASA Space Gallery", path: '/dashboard-08', icon: Rocket}
     ]
 
     const currentDashboard = completedDashboards.find(d => d.path === location.pathname)

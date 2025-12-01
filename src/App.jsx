@@ -8,6 +8,7 @@ import { Dashboard04 } from './components/dashboards/Dashboard04'
 import { Dashboard05 } from './components/dashboards/Dashboard05'
 import { Dashboard06 } from './components/dashboards/Dashboard06'
 import { Dashboard07 } from './components/dashboards/Dashboard07'
+import { Dashboard08 } from './components/dashboards/Dashboard08'
 import './index.css'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/dashboard-05" element={<Dashboard05 />} />
             <Route path="/dashboard-06" element={<Dashboard06 />} />
             <Route path="/dashboard-07" element={<Dashboard07 />} />
+            <Route path="/dashboard-08" element={<Dashboard08 />} />
             {/* Add more dashboard routes as you build them */}
             </Routes>
         </Layout>
