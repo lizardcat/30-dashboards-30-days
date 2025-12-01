@@ -73,6 +73,17 @@ export function Dashboard08() {
         fetchNASAData();
     }, [dateRange]);
 
+    // Close modal with ESC key
+    useEffect(() => {
+        const handleEsc = (e) => {
+            if (e.key === 'Escape' && selectedImage) {
+                setSelectedImage(null);
+            }
+        };
+        window.addEventListener('keydown', handleEsc);
+        return () => window.removeEventListener('keydown', handleEsc);
+    }, [selectedImage]);
+
     // Toggle favorite
     const toggleFavorite = (image) => {
         const isFavorited = favorites.some(fav => fav.date === image.date);
@@ -549,16 +560,23 @@ export function Dashboard08() {
 
             {/* Image Detail Modal */}
             {selectedImage && (
-                <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
-                    <div className="max-w-6xl w-full bg-slate-900 rounded-2xl shadow-2xl border border-purple-500/30 my-8">
+                <div 
+                    className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto py-8"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <div 
+                        className="max-w-6xl w-full bg-slate-900 rounded-2xl shadow-2xl border border-purple-500/30 my-auto"
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         {/* Header */}
-                        <div className="flex items-center justify-between p-6 border-b border-purple-500/30">
-                            <h2 className="text-2xl font-bold text-white pr-8">
+                        <div className="flex items-start justify-between p-6 border-b border-purple-500/30 gap-4">
+                            <h2 className="text-2xl font-bold text-white flex-1 pt-2">
                                 {selectedImage.title}
                             </h2>
                             <button
                                 onClick={() => setSelectedImage(null)}
-                                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white transition-colors"
+                                className="p-3 rounded-lg bg-red-600 hover:bg-red-700 text-white transition-colors shadow-lg hover:shadow-xl flex-shrink-0"
+                                title="Close (ESC or click outside)"
                             >
                                 <X size={24} />
                             </button>
