@@ -21,7 +21,7 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-05) | ✅ Complete    |
 | 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-06) | ✅ Complete    |
 | 07  | COVID-19 Statistics     | Regional pandemic data visualization                  | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-07) | ✅ Complete    |
-| 08  | NASA Space Gallery      | Astronomy picture of the day archive                  | [View Demo](#)                                                      | ✅ Complete    |
+| 08  | NASA Space Gallery      | Astronomy picture of the day archive                  | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-08) | ✅ Complete    |
 | 09  | Transit Tracker         | Public transportation status and delays               | [View Demo](#)                                                      | 🚧 In Progress |
 | 10  | Energy Consumption      | Global energy usage by country                        | [View Demo](#)                                                      | ⏳ Planned     |
 | 11  | Website Analytics       | Mock analytics dashboard with insights                | [View Demo](#)                                                      | ⏳ Planned     |
