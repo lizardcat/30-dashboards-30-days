@@ -21,8 +21,8 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 | 05  | News Aggregator         | Curated news from multiple sources                    | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-05) | ✅ Complete    |
 | 06  | Air Quality Monitor     | Global air quality index tracker                      | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-06) | ✅ Complete    |
 | 07  | COVID-19 Statistics     | Regional pandemic data visualization                  | [View Demo](https://30-dashboards-30-days.netlify.app/dashboard-07) | ✅ Complete    |
-| 08  | NASA Space Gallery      | Astronomy picture of the day archive                  | [View Demo](#)                                                      | 🚧 In Progress |
-| 09  | Transit Tracker         | Public transportation status and delays               | [View Demo](#)                                                      | ⏳ Planned     |
+| 08  | NASA Space Gallery      | Astronomy picture of the day archive                  | [View Demo](#)                                                      | ✅ Complete    |
+| 09  | Transit Tracker         | Public transportation status and delays               | [View Demo](#)                                                      | 🚧 In Progress |
 | 10  | Energy Consumption      | Global energy usage by country                        | [View Demo](#)                                                      | ⏳ Planned     |
 | 11  | Website Analytics       | Mock analytics dashboard with insights                | [View Demo](#)                                                      | ⏳ Planned     |
 | 12  | Social Media Metrics    | Engagement tracking dashboard                         | [View Demo](#)                                                      | ⏳ Planned     |
@@ -109,6 +109,13 @@ The goal is simple: build one dashboard every day for 30 days, each solving a re
 - **Key Features:** Real-time COVID-19 data via disease.sh API, interactive SVG map of Africa with 54+ countries, click-to-select country details, color-coded regions based on cases/deaths/vaccination rates, regional breakdowns (North, West, East, Southern, Central Africa), top countries rankings, live stats cards (total cases, deaths, recovered, vaccination rates), auto-refresh every 10 minutes, search functionality, and three view modes (cases, deaths, vaccinated).
 - **Challenges:** Building a simplified SVG map of Africa from scratch was interesting - had to manually position ~54 countries (South Sudan not included sadly) in a grid that roughly matches their geographic locations. Also had to create a comprehensive mapping between ISO country codes and African regions. The disease.sh API doesn't provide vaccination data directly, so I used test counts as a proxy metric.
 - **Learnings:** The disease.sh API is fantastic - completely free, no API key required, and provides clean, well-structured data from Johns Hopkins CSSE. COVID-19 data reporting varies significantly across African nations, with South Africa having the most comprehensive statistics while some smaller countries have limited reporting infrastructure.
+
+### Day 8 - NASA Space Gallery
+
+- **Focus:** An astronomy picture gallery powered by NASA's APOD API, showcasing stunning space imagery from their archive dating back to 1995.
+- **Key Features:** Grid/list view modes, time-based filtering (week/month/random), search and media type filtering, favorites system with localStorage, HD image downloads, and detailed modals with full NASA explanations.
+- **Challenges:** APOD API's DEMO_KEY limits requests to 30/hour, so had to minimize unnecessary fetches. Mixed media types (images + YouTube videos) needed different rendering logic. Some images have HD versions while others don't, requiring fallback handling.
+  Learnings: NASA's APIs are super reliable and well-documented. The 9,000+ image archive is incredible. Also learned that Grid3X3 and Telescope from the lucide-react library don't work for some reason, even though both are there according to the library website. I replaced them with LayoutGrid & Star.
 
 _[Daily entries will be added as each dashboard is completed]_
 
