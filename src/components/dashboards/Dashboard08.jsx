@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Search, Image, Video, Star, Download, ChevronLeft, ChevronRight, Sparkles, RefreshCw, X, ExternalLink, Info, LayoutGrid, List, Filter, Heart } from 'lucide-react';
+import { Calendar, Search, Image, Video, Star, Rocket, Download, ChevronLeft, ChevronRight, Sparkles, RefreshCw, X, ExternalLink, Info, LayoutGrid, List, Filter, Heart } from 'lucide-react';
 
 export function Dashboard08() {
     const [images, setImages] = useState([]);
@@ -167,7 +167,7 @@ export function Dashboard08() {
         return (
             <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
                 <div className="text-center max-w-md">
-                    <Star className="text-red-400 mx-auto mb-4" size={48} />
+                    <Rocket className="text-red-400 mx-auto mb-4" size={48} />
                     <p className="text-white font-medium text-lg mb-2">Failed to load gallery</p>
                     <p className="text-purple-300 text-sm mb-4">{error}</p>
                     <button
@@ -190,7 +190,7 @@ export function Dashboard08() {
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                             <div className="flex items-center gap-3">
                                 <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg">
-                                    <Star className="text-white" size={24} />
+                                    <Rocket className="text-white" size={24} />
                                 </div>
                                 <div>
                                     <h1 className="text-2xl font-bold text-white">NASA Space Gallery</h1>
